@@ -1,0 +1,11 @@
+http.StripPrefix(). Sebenarnya actual handler nya berada pada http.FileServer(). 
+Fungsi http.StripPrefix() hanya digunakan untuk membungkus actual handler.
+
+
+Method Execute() milik *template.Template, digunakan untuk menyisipkan data 
+pada template, untuk kemudian ditampilkan ke browser. Data bisa disipkan dalam 
+bentuk struct, map, atau interface{}.
+
+template.ParseGlob() dipanggil, dengan parameter adalah pattern path "path/*".
+Fungsi ini digunakan untuk memparsing semua file yang match dengan pattern yang 
+ditentukan, dan fungsi ini mengembalikan 2 objek: *template.Template & error.
