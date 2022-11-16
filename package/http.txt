@@ -9,3 +9,8 @@ bentuk struct, map, atau interface{}.
 template.ParseGlob() dipanggil, dengan parameter adalah pattern path "path/*".
 Fungsi ini digunakan untuk memparsing semua file yang match dengan pattern yang 
 ditentukan, dan fungsi ini mengembalikan 2 objek: *template.Template & error.
+
+
+Wrap fungsi template.ParseFiles() dalam template.Must(). Fungsi ini berguna
+untuk deteksi error pada saat membuat instance *template.Template baru atau
+ketika sedang mengolahnya. Ketika ada error, panic dimunculkan.
