@@ -26,8 +26,12 @@ func Route3(w http.ResponseWriter, r *http.Request) {
 		"for2":  "Menjadi Golang develover",
 	}
 
-	t, err := template.ParseFiles(filepath)
-	// t, err := template.ParseFiles("./temp/view.html")
+	t, err := template.ParseFiles(filepath) // dapat berisi lebih dari satu parameter
+	// t := template.Must(template.ParseFiles(
+	// 	"./temp/view.html",
+	// 	"./temp/index.html",
+	// 	)) // must akan membungkus template.template dan akan mendeterksi sebuah error
+
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
@@ -35,6 +39,7 @@ func Route3(w http.ResponseWriter, r *http.Request) {
 	// jika terjadi error maka error akan masuk ke http.error
 
 	err = t.Execute(w, data)
+	// err = t.ExecuteTemplate(w, data)
 
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
