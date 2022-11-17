@@ -1,4 +1,13 @@
 <!DOCTYPE html>
+
+{{/* ini adalah comment jadi tidak akan muncul */}}
+{{/* kita bisa membuat variable pada sebuah template dengan cara memulai dari simbol $ */}}
+{{ $add := .Info.Address}}
+{{ $what := .Info.WhatsApp}}
+
+{{with .Info}} {{/* jika kira menambahkan ini maka scope akan menjadi info bkan lagi person */}}
+{{/* dan ketika info di panggil maka tidak akan membutuhkan .info.method/var tapi langsung ke {{.methodorvar}} */}}
+
 <html>
     <head>
         <title>Karya ini berjudul {{.title}}</title>
