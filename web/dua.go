@@ -1,6 +1,7 @@
 package web
 
 import (
+	"fmt"
 	"html/template"
 	"net/http"
 )
@@ -28,9 +29,10 @@ func Route21(w http.ResponseWriter, r *http.Request) {
 		},
 	}
 
-	t, er := template.ParseFiles("./temp/kedua/view.html")
+	t, er := template.ParseFiles("./temp/kedua/test.html")
 	if er != nil {
 		http.Error(w, er.Error(), 500)
+		fmt.Println(er.Error())
 		return
 	}
 	t.Execute(w, person)
