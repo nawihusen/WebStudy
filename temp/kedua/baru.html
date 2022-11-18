@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+{{$age := .Age}}
+<html>
+    <head>
+        <title>Learning html/template Actions</title>
+    </head>
+    <body>
+        <p>
+            <h1>Hello</h1>
+            {{html "<h2>Hello</h2>"}}
+        </p>
+        {{if gt $age 20}}
+        <p>Kamu sudah cukup umur</p>
+        {{end}}
+        <p>{{.Say "Jack"}}</p>
+        <p>{{printf "Go juga menyediakan beberapa fungsi yang bisa digunakan seperti  %s %s %s" "printf yang sama dengan fmt.Sprintf" "print yang sama dengan fmt.Sprint" "println yang sama dengan fmt.Sprintln"}}</p>
+        <p>{{index .Hobbies 0}}</p>
+        <p>{{len .Hobbies}}</p>
+    </body>
+</html>

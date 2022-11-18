@@ -4,9 +4,6 @@
 {{ $add := .Info.Address}}
 {{ $what := .Info.WhatsApp}}
 
-{{with .Info}} {{/* jika kira menambahkan ini maka scope akan menjadi info bkan lagi person */}}
-{{/* dan ketika info di panggil maka tidak akan membutuhkan .info.method/var tapi langsung ke {{.methodorvar}} */}}
-
 <html>
     <head>
         <title>Learning html/template Actions</title>
@@ -48,8 +45,19 @@
             {{if eq .Name "Nawi"}}
             <tr>
                 <td>Tambahan</td>
-                <td>: ini adalah kondision</td>
+                <td>:Jika ini muncul berarti true</td>
             </tr>
+            {{else if ne .Name "Nawi"}}
+            <tr>
+                <td>Tambahan</td>
+                <td>:Jika ini muncul berarti true</td>
+            </tr>
+            {{else}}
+            <tr>
+                <td>Tambahan</td>
+                <td>:Jika ini muncul berarti true</td>
+            </tr>
+            {{end}}
         </table>
     </body>
     

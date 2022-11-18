@@ -3,6 +3,11 @@
 {{/* kita bisa membuat variable pada sebuah template dengan cara memulai dari simbol $ */}}
 {{ $add := .Info.Address}}
 {{ $what := .Info.WhatsApp}}
+
+
+{{with .Info}} {{/* jika kira menambahkan ini maka scope akan menjadi info bkan lagi person */}}
+{{/* dan ketika info di panggil maka tidak akan membutuhkan .info.method/var tapi langsung ke {{.methodorvar}} */}}
+
 <html>
     <head>
         <title>Learning html/template Actions</title>
@@ -43,12 +48,11 @@
         <td>Info</td>
         <td>: {{.Info.Perkenalan}}</td>
     </tr>
-    {{if eq .Name "Nawi"}}
-    <tr>
-        <td>Tambahan</td>
-        <td>: ini adalah kondision</td>
-    </tr>
+
         </table>
     </body>
     
 </html>
+
+{{html "<h2>Hello</h2>"}} akan melakukan escape sehingga yang ditampilkan semua dari 
+<h2>Hello</h2> akan muncul dilayar
