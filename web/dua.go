@@ -74,3 +74,17 @@ func Route22(w http.ResponseWriter, r *http.Request) {
 	}
 	t.Execute(w, person)
 }
+
+func Route31(w http.ResponseWriter, r *http.Request) {
+	tmpl := template.Must(template.New("test").ParseFiles("./temp/ketiga/viw.html"))
+	if er := tmpl.Execute(w, nil); er != nil {
+		http.Error(w, er.Error(), http.StatusInternalServerError)
+	}
+}
+
+func Route32(w http.ResponseWriter, r *http.Request) {
+	tmpl := template.Must(template.New("index").ParseFiles("./temp/ketiga/viw.html"))
+	if er := tmpl.Execute(w, nil); er != nil {
+		http.Error(w, er.Error(), http.StatusInternalServerError)
+	}
+}
