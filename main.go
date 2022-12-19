@@ -9,6 +9,9 @@ import (
 func main() {
 	http.HandleFunc("/route21", web.Route21)
 	http.HandleFunc("/route22", web.Route22)
+	http.HandleFunc("/route31", web.Route31)
+	http.HandleFunc("/route32", web.Route32)
+	// http.HandleFunc("/route33", web.Route33) belum bisa
 	http.HandleFunc("/test", web.Route31)
 	http.HandleFunc("/coba", web.Route32)
 

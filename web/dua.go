@@ -88,3 +88,20 @@ func Route32(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, er.Error(), http.StatusInternalServerError)
 	}
 }
+
+// func Route33(w http.ResponseWriter, r *http.Request) {
+
+// 	const view string = `<html>
+// <head>
+// 	<title>Template</title>
+// </head>
+// <body>
+// 	<h1>Hello</h1>
+// </body>
+// </html>`
+
+// 	tmpl := template.Must(template.New("web").Parse(view))
+// 	if er := tmpl.Execute(w, nil); er != nil {
+// 		http.Error(w, er.Error(), http.StatusInternalServerError)
+// 	}
+// } // belum bisa
