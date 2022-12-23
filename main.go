@@ -14,6 +14,8 @@ func main() {
 	// http.HandleFunc("/route33", web.Route33) belum bisa
 	http.HandleFunc("/test", web.Route31)
 	http.HandleFunc("/coba", web.Route32)
+	http.HandleFunc("/twelveone", web.TwelveOne)
+	http.HandleFunc("/twelvetwo", web.TwelveTwo)
 
 	var funcMap = template.FuncMap{
 		"unescape": func(s string) template.HTML {
